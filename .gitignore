@@ -75,3 +75,6 @@ DerivedDataCache/*
 *.props
 .vsconfig
 /Content/JavaScript
+**/Intermediate/*
+**/Saved/*
+**/obj/*

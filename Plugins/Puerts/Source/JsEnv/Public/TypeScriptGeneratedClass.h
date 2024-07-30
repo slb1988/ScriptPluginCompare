@@ -14,6 +14,8 @@
 #include "Engine/BlueprintGeneratedClass.h"
 #include "Templates/Function.h"
 #include "Templates/SharedPointer.h"
+#include "Runtime/CoreUObject/Public/UObject/Package.h"
+
 #include "TypeScriptGeneratedClass.generated.h"
 
 struct PendingConstructJobInfo
@@ -31,7 +33,7 @@ class JSENV_API UTypeScriptGeneratedClass : public UBlueprintGeneratedClass
     GENERATED_BODY()
 
 public:
-    TWeakPtr<puerts::ITsDynamicInvoker, ESPMode::ThreadSafe> DynamicInvoker;
+    TWeakPtr<PUERTS_NAMESPACE::ITsDynamicInvoker, ESPMode::ThreadSafe> DynamicInvoker;
 
     TSet<FName> FunctionToRedirect;
 

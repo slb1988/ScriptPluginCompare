@@ -17,15 +17,11 @@
 #include "PropertyTranslator.h"
 #include "FunctionTranslator.h"
 #include "JSClassRegister.h"
-
-#pragma warning(push, 0)
-#include "libplatform/libplatform.h"
-#include "v8.h"
-#pragma warning(pop)
+#include "NamespaceDef.h"
 
 #define PUERTS_REUSE_STRUCTWRAPPER_FUNCTIONTEMPLATE 1
 
-namespace puerts
+namespace PUERTS_NAMESPACE
 {
 class FStructWrapper
 {
@@ -85,7 +81,11 @@ protected:
 
     TWeakObjectPtr<UStruct> Struct;
 
+#if PUERTS_KEEP_UOBJECT_REFERENCE
     bool IsNativeTakeJsRef = false;
+#else
+    bool IsNativeTakeJsRef = true;
+#endif
 
     bool IsTypeScriptGeneratedClass = false;
 
@@ -113,6 +113,11 @@ public:
 
     static void Free(TWeakObjectPtr<UStruct> InStruct, FinalizeFunc InExternalFinalize, void* Ptr);
 
+    void Free(void* Ptr)
+    {
+        Free(Struct, ExternalFinalize, Ptr);
+    }
+
     static void New(const v8::FunctionCallbackInfo<v8::Value>& Info);
 
     void New(v8::Isolate* Isolate, v8::Local<v8::Context>& Context, const v8::FunctionCallbackInfo<v8::Value>& Info);
@@ -131,4 +136,4 @@ public:
 
     void New(v8::Isolate* Isolate, v8::Local<v8::Context>& Context, const v8::FunctionCallbackInfo<v8::Value>& Info);
 };
-}    // namespace puerts
+}    // namespace PUERTS_NAMESPACE

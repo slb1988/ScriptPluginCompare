@@ -16,7 +16,7 @@
 #include "HAL/PlatformFilemanager.h"
 #endif
 
-namespace puerts
+namespace PUERTS_NAMESPACE
 {
 static FString PathNormalize(const FString& PathIn)
 {
@@ -74,6 +74,10 @@ bool DefaultJSModuleLoader::SearchModuleInDir(
     return SearchModuleWithExtInDir(Dir, RequiredModule + ".js", Path, AbsolutePath) ||
            SearchModuleWithExtInDir(Dir, RequiredModule + ".mjs", Path, AbsolutePath) ||
            SearchModuleWithExtInDir(Dir, RequiredModule + ".cjs", Path, AbsolutePath) ||
+#if defined(WITH_V8_BYTECODE)
+           SearchModuleWithExtInDir(Dir, RequiredModule + ".mbc", Path, AbsolutePath) ||
+           SearchModuleWithExtInDir(Dir, RequiredModule + ".cbc", Path, AbsolutePath) ||
+#endif
            SearchModuleWithExtInDir(Dir, RequiredModule / "package.json", Path, AbsolutePath) ||
            SearchModuleWithExtInDir(Dir, RequiredModule / "index.js", Path, AbsolutePath);
 }
@@ -139,4 +143,4 @@ FString& DefaultJSModuleLoader::GetScriptRoot()
     return ScriptRoot;
 }
 
-}    // namespace puerts
+}    // namespace PUERTS_NAMESPACE

@@ -15,10 +15,12 @@ const jsDefaultConfig = {
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     "jsx": "react",
     "sourceMap": true,
     "typeRoots": [
-      "Plugins/Puerts/Typing",
+      "Typing",
       "./node_modules/@types"
     ],
     "outDir": "Content/JavaScript"

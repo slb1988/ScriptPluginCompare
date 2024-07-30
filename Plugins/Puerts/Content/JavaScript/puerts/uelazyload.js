@@ -9,23 +9,25 @@ var global = global || (function () { return this; }());
 (function (global) {
     "use strict";
     
-    let loadUEType = global.__tgjsLoadUEType;
-    global.__tgjsLoadUEType = undefined;
+    let loadUEType = global.puerts.loadUEType;
     
-    let loadCDataType = global.__tgjsLoadCDataType;
-    global.__tgjsLoadCDataType = undefined;
+    let loadCPPType = global.puerts.loadCPPType;
     
     let cache = Object.create(null);
-    
+
     let UE = new Proxy(cache, {
-        get: function(classWrapers, name) {
-            if (!(name in classWrapers)) {
-                classWrapers[name] = loadUEType(name);
+        get : function(classWrapers, name)
+        {
+            let value = classWrapers[name];
+            if (value === undefined)
+            {
+                value = loadUEType(name);
+                classWrapers[name] = value;
             }
-            return classWrapers[name];
+            return value;
         }
     });
-    
+
     const TNAMESPACE = 0;
     const TENUM = 1
     const TBLUEPRINT = 2;
@@ -50,7 +52,7 @@ var global = global || (function () { return this; }());
                                 path = `/${c.__path}${path}`
                                 c = c.__parent;
                             }
-                            const obj = UE.Object.Load(path);
+                            const obj = UE.Object.Load(path, true);
                             if (obj) {
                                 const typeName = obj.GetClass().GetName();
                                 if (typeName === 'UserDefinedEnum') {
@@ -74,17 +76,22 @@ var global = global || (function () { return this; }());
     cache["Game"] = createNamespaceOrClass("Game", undefined, TNAMESPACE);
     
     puerts.registerBuildinModule('ue', UE);
+    global.UE = UE;
     
     let CPP = new Proxy(cache, {
         get: function(classWrapers, name) {
-            if (!(name in classWrapers)) {
-                classWrapers[name] = loadCDataType(name);
+            let value = classWrapers[name];
+            if (value === undefined)
+            {
+                value = loadCPPType(name);
+                classWrapers[name] = value;
             }
-            return classWrapers[name];
+            return value;
         }
     });
     
     puerts.registerBuildinModule('cpp', CPP);
+    global.CPP = CPP;
     
     function ref(x) {
         return [x];
@@ -115,6 +122,9 @@ var global = global || (function () { return this; }());
     
     let rawmakeclass = global.__tgjsMakeUClass
     global.__tgjsMakeUClass = undefined;
+
+    puerts.setJsTakeRef = global.__tgjsSetJsTakeRef
+    global.__tgjsSetJsTakeRef = undefined
     
     function defaultUeConstructor(){};
     
@@ -154,7 +164,7 @@ var global = global || (function () { return this; }());
     
     function blueprint(path) {
         console.warn('deprecated! use blueprint.tojs instead');
-        let ufield = UE.Field.Load(path);
+        let ufield = UE.Field.Load(path, true);
         if (ufield) {
             let jsclass = UEClassToJSClass(ufield);
             jsclass.__puerts_ufield = ufield;
@@ -217,7 +227,7 @@ var global = global || (function () { return this; }());
                 path = `/${c.__path}${path}`
                 c = c.__parent;
             }
-            let ufield = UE.Field.Load(path);
+            let ufield = UE.Field.Load(path, true);
             if (!ufield) {
                 throw new Error(`load ${path} fail!`);
             }
@@ -268,30 +278,75 @@ var global = global || (function () { return this; }());
     function NewArray(t1) {
         t1 = translateType(t1);
 
-        return newContainer(0, t1);
+        var ret = newContainer(0, t1);
+        if (!("[Symbol.iterator]" in ret)) {
+            ret.constructor.prototype[Symbol.iterator] = function*() {
+                let index = 0;
+                let num = this.Num();
+                while (index < num) {
+                    yield this.Get(index);
+                    index++;
+                }
+            }
+        }
+        return ret;
     }
     
     function NewSet(t1) {
         t1 = translateType(t1);
         
-        return newContainer(1, t1);
+        var ret = newContainer(1, t1);
+        if (!("[Symbol.iterator]" in ret)) {
+            ret.constructor.prototype[Symbol.iterator] = function*() {
+                let index = 0;
+                let maxIndex = this.GetMaxIndex();
+                while (index < maxIndex) {
+                    if (this.IsValidIndex(index)) {
+                        yield this.Get(index);
+                    }
+                    index++;
+                }
+            }
+        }
+        return ret;
     }
     
     function NewMap(t1, t2) {
         t1 = translateType(t1);
         t2 = translateType(t2);
-        
-        return newContainer(2, t1, t2);
+
+        var ret = newContainer(2, t1, t2);
+        if (!("[Symbol.iterator]" in ret)) {
+            ret.constructor.prototype[Symbol.iterator] = function*() {
+                let index = 0;
+                let maxIndex = this.GetMaxIndex();
+                while (index < maxIndex) {
+                    if (this.IsValidIndex(index)) {
+                        let key = this.GetKey(index);
+                        let value = this.Get(key);
+                        yield [key, value];
+                    }
+                    index++;
+                }
+            }
+        }
+        return ret;
     }
     
     cache.BuiltinBool = 0;
     cache.BuiltinByte = 1;
     cache.BuiltinInt = 2;
     cache.BuiltinFloat = 3;
-    cache.BuiltinInt64 = 4;
-    cache.BuiltinString = 5;
-    cache.BuiltinText = 6;
-    cache.BuiltinName = 7;
+    cache.BuiltinDouble = 4;
+    cache.BuiltinInt64 = 5;
+    cache.BuiltinString = 6;
+    cache.BuiltinText = 7;
+    cache.BuiltinName = 8;
+    
+    // call once to inject iterators to constructor
+    NewArray(cache.BuiltinInt);
+    NewSet(cache.BuiltinInt);
+    NewMap(cache.BuiltinInt, cache.BuiltinInt);
     
     cache.NewArray = NewArray;
     cache.NewSet = NewSet;
@@ -783,6 +838,7 @@ var global = global || (function () { return this; }());
         "BitmaskEnum": MetaDataInst,
         //  decorator
         "umeta": dummyDecorator,
+        "attach": dummyDecorator
     }
 
     cache.uparam =
@@ -896,5 +952,34 @@ var global = global || (function () { return this; }());
         });
     }
     puerts.__mergePrototype = mergePrototype
+    
+    function removeListItem(list, item) {
+        var found = false;
+        for (var i = 0; i < list.length; ++i) {
+            if (!found) {
+                found = (list[i] === item);
+            }
+            if (found) {
+                list[i] = list[i + 1]; // array[length + 1] === undefined
+            }
+        }
+        if (found) {
+            list.pop();
+        }
+    }
+    puerts.__removeListItem = removeListItem
+    
+    function genListApply(lst) {
+        return function(...args) {
+            const len = lst.length;
+            const list = lst.slice();
+            let ret
+            for (var i = 0; i < len; ++i) {
+                ret = Reflect.apply(list[i], this, args);
+            }
+            return ret;
+        }
+    }
+    puerts.__genListApply = genListApply
     
 }(global));

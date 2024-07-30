@@ -19,14 +19,18 @@
 #include "UObject/WeakFieldPtr.h"
 #endif
 
-#pragma warning(push, 0)
+#include "NamespaceDef.h"
 #include "ArrayBuffer.h"
 #include "JsObject.h"
+
+PRAGMA_DISABLE_UNDEFINED_IDENTIFIER_WARNINGS
+#pragma warning(push, 0)
 #include "libplatform/libplatform.h"
 #include "v8.h"
 #pragma warning(pop)
+PRAGMA_ENABLE_UNDEFINED_IDENTIFIER_WARNINGS
 
-namespace puerts
+namespace PUERTS_NAMESPACE
 {
 class FPropertyTranslator
 {
@@ -178,4 +182,4 @@ public:
 
     void SetAccessor(v8::Isolate* Isolate, v8::Local<v8::FunctionTemplate> Template);
 };
-}    // namespace puerts
+}    // namespace PUERTS_NAMESPACE

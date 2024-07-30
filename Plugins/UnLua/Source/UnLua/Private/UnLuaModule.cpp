@@ -16,6 +16,7 @@
 #include "ISettingsModule.h"
 #include "ISettingsSection.h"
 #include "Modules/ModuleManager.h"
+#include "Editor.h"
 #endif
 
 #if ALLOW_CONSOLE
@@ -136,8 +137,6 @@ namespace UnLua
                 EnvLocator->Reset();
                 EnvLocator->RemoveFromRoot();
                 EnvLocator = nullptr;
-                FClassRegistry::Cleanup();
-                FEnumRegistry::Cleanup();
                 FLuaOverrides::Get().RestoreAll();
             }
 
@@ -176,13 +175,6 @@ namespace UnLua
         virtual void NotifyUObjectDeleted(const UObjectBase* Object, int32 Index) override
         {
             // UE_LOG(LogTemp, Log, TEXT("NotifyUObjectDeleted : %p"), Object);
-            if (!bIsActive)
-                return;
-
-            if (FClassRegistry::StaticUnregister(Object))
-                return;
-
-            FEnumRegistry::StaticUnregister(Object);
         }
 
         virtual void OnUObjectArrayShutdown() override

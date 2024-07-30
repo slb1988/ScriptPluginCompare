@@ -14,10 +14,12 @@
 #include "socket.h"
 #include "pierror.h"
 
+#ifndef GAI_STRERROR_DEFINED
 #ifdef UNICODE
 #define gai_strerror(err) FTCHARToUTF8(gai_strerrorW(err)).Get()
+#define GAI_STRERROR_DEFINED
 #endif
-
+#endif
 /* WinSock doesn't have a strerror... */
 static const char *wstrerror(int err);
 
@@ -322,13 +324,17 @@ void socket_setnonblocking(p_socket ps) {
 * DNS helpers
 \*-------------------------------------------------------------------------*/
 int socket_gethostbyaddr(const char *addr, socklen_t len, struct hostent **hp) {
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
     *hp = gethostbyaddr(addr, len, AF_INET);
+#undef _WINSOCK_DEPRECATED_NO_WARNINGS
     if (*hp) return IO_DONE;
     else return WSAGetLastError();
 }
 
 int socket_gethostbyname(const char *addr, struct hostent **hp) {
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
     *hp = gethostbyname(addr);
+#undef _WINSOCK_DEPRECATED_NO_WARNINGS
     if (*hp) return IO_DONE;
     else return  WSAGetLastError();
 }

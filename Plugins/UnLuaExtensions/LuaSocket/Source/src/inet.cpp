@@ -9,8 +9,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifndef GAI_STRERROR_DEFINED
 #if (defined(_WIN32) && defined(UNICODE))
 #define gai_strerror(err) FTCHARToUTF8(gai_strerrorW(err)).Get()
+#define GAI_STRERROR_DEFINED
+#endif
 #endif
 
 /*=========================================================================*\

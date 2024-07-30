@@ -98,7 +98,7 @@ public class UnLua : ModuleRules
         loadBoolConfig("bLuaCompileAsCpp", "LUA_COMPILE_AS_CPP", false);
         loadBoolConfig("bWithUE4Namespace", "WITH_UE4_NAMESPACE", true);
         loadBoolConfig("bLegacyReturnOrder", "UNLUA_LEGACY_RETURN_ORDER", false);
-        loadBoolConfig("bLegacyBlueprintPath", "UNLUA_LEGACY_BLUEPRINT_PATH", false);
+        loadBoolConfig("bLegacyBlueprintPath", "UNLUA_LEGACY_BLUEPRINT_PATH", true);
         loadBoolConfig("bLegacyAllowUTF8WithBOM", "UNLUA_LEGACY_ALLOW_BOM", false);
         loadBoolConfig("bLegacyArgsPassing", "UNLUA_LEGACY_ARGS_PASSING", true);
         loadStringConfig("LuaVersion", "UNLUA_LUA_VERSION", "lua-5.4.3");

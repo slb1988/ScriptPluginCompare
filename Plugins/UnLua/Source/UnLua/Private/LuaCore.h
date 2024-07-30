@@ -94,9 +94,9 @@ void PushObjectCore(lua_State *L, UObjectBaseUtility *Object);
  */
 int32 GetDelegateInfo(lua_State *L, int32 Index, UObject* &Object, const void* &Function);
 
-int32 PushFunction(lua_State *L, UObjectBaseUtility *Object, const char *FunctionName);
-bool PushFunction(lua_State *L, UObjectBaseUtility *Object, int32 FunctionRef);
-bool CallFunction(lua_State *L, int32 NumArgs, int32 NumResults);
+UNLUA_API int32 PushFunction(lua_State *L, UObjectBaseUtility *Object, const char *FunctionName);
+UNLUA_API bool PushFunction(lua_State *L, UObjectBaseUtility *Object, int32 FunctionRef);
+UNLUA_API bool CallFunction(lua_State *L, int32 NumArgs, int32 NumResults);
 
 /**
  * Get corresponding Lua instance for a UObjectBaseUtility
@@ -109,13 +109,6 @@ UNLUA_API bool GetObjectMapping(lua_State *L, UObjectBaseUtility *Object);
 UNLUA_API void AddPackagePath(lua_State *L, const char *Path);
 
 /**
- * Functions to register collision enums
- */
-bool RegisterECollisionChannel(lua_State *L);
-bool RegisterEObjectTypeQuery(lua_State *L);
-bool RegisterETraceTypeQuery(lua_State *L);
-
-/**
  * Functions to create weak table
  */
 void CreateWeakKeyTable(lua_State *L);
@@ -123,15 +116,6 @@ void CreateWeakValueTable(lua_State *L);
 
 int32 TraverseTable(lua_State *L, int32 Index, void *Userdata, bool (*TraverseWorker)(lua_State*, void*));
 bool PeekTableElement(lua_State *L, void *Userdata);
-
-/**
- * Functions to handle UEnum
- */
-int32 Enum_Index(lua_State *L);
-int32 Enum_Delete(lua_State *L);
-int32 Enum_GetMaxValue(lua_State* L);
-int32 Enum_GetNameStringByValue(lua_State* L);
-int32 Enum_GetDisplayNameTextByValue(lua_State* L);
 
 /**
  * Functions to handle UClass

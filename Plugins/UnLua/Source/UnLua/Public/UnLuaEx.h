@@ -538,10 +538,10 @@ UnLua::AddType(#Name, UnLua::GetTypeInterface<Type>()); \
 #define ADD_EXTERNAL_FUNCTION_EX(Name, RetType, Function, ...) \
             Class->AddStaticFunction<RetType, ##__VA_ARGS__>(Name, Function);
 
-#define ADD_STATIC_CFUNTION(Function) \
+#define ADD_STATIC_CFUNCTION(Function) \
             Class->AddStaticCFunction(#Function, &ClassType::Function);
 
-#define ADD_NAMED_STATIC_CFUNTION(Name, Function) \
+#define ADD_NAMED_STATIC_CFUNCTION(Name, Function) \
             Class->AddStaticCFunction(Name, &ClassType::Function);
 
 #define ADD_LIB(Lib) \

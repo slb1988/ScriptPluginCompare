@@ -35,7 +35,11 @@ int opt_meth_setoption(lua_State *L, p_opt opt, p_socket ps)
         opt++;
     if (!opt->func) {
         char msg[57];
-        sprintf(msg, "unsupported option `%.35s'", name);
+#if defined(_WIN32) && defined(__STDC_WANT_SECURE_LIB__)
+        sprintf_s(msg, "unsupported option `%.35s'", name);
+#else
+    	sprintf(msg, "unsupported option `%.35s'", name);
+#endif
         luaL_argerror(L, 2, msg);
     }
     return opt->func(L, ps);
@@ -48,7 +52,11 @@ int opt_meth_getoption(lua_State *L, p_opt opt, p_socket ps)
         opt++;
     if (!opt->func) {
         char msg[57];
-        sprintf(msg, "unsupported option `%.35s'", name);
+#if defined(_WIN32) && defined(__STDC_WANT_SECURE_LIB__)
+        sprintf_s(msg, "unsupported option `%.35s'", name);
+#else
+    	sprintf(msg, "unsupported option `%.35s'", name);
+#endif
         luaL_argerror(L, 2, msg);
     }
     return opt->func(L, ps);
@@ -294,7 +302,10 @@ int opt_get_ip_multicast_if(lua_State *L, p_socket ps)
         lua_pushstring(L, "getsockopt failed");
         return 2;
     }
+
+#define WINSOCK_DEPRECATED_NO_WARNINGS
     lua_pushstring(L, inet_ntoa(val));
+#undef WINSOCK_DEPRECATED_NO_WARNINGS
     return 1;
 }
 

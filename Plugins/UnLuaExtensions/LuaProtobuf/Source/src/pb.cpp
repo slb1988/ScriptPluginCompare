@@ -1226,6 +1226,47 @@ static int Lpb_loadfile(lua_State *L) {
     return 2;
 }
 
+static int Lpb_loadufsfile(lua_State* L) {
+	lpb_State* LS = lpb_lstate(L);
+	const char* filename = luaL_checkstring(L, 1);
+	size_t size = 0;
+	pb_Buffer b;
+	pb_Slice s;
+	int ret;
+
+	{
+		FString FullFilePath = FPaths::Combine(FPaths::ProjectContentDir(), ANSI_TO_TCHAR(filename));
+		TArray<uint8> readfile;
+		if (!FFileHelper::LoadFileToArray(readfile, *FullFilePath))
+		{
+			return luaL_fileresult(L, 0, filename);
+		}
+		else
+		{
+			size_t readed_len = 0;
+			pb_initbuffer(&b);
+			do {
+				char* d = pb_prepbuffsize(&b, BUFSIZ);
+				if (d == NULL) { return luaL_error(L, "out of memory"); }
+
+				// size = fread(d, 1, BUFSIZ, fp);
+				size = readfile.Num() - readed_len > BUFSIZ ? BUFSIZ : readfile.Num() - readed_len;
+				std::memcpy(d, readfile.GetData() + readed_len, size);
+				readed_len += size;
+				pb_addsize(&b, size);
+			} while (size == BUFSIZ);
+		}
+	}
+
+	s = pb_result(&b);
+	ret = pb_load(&LS->local, &s);
+	if (ret == PB_OK) global_state = &LS->local;
+	pb_resetbuffer(&b);
+	lua_pushboolean(L, ret == PB_OK);
+	lua_pushinteger(L, pb_pos(s) + 1);
+	return 2;
+}
+
 static int lpb_pushtype(lua_State *L, const pb_Type *t) {
     if (t == NULL) return 0;
     lua_pushstring(L, (const char*)t->name);
@@ -2027,7 +2068,8 @@ LUALIB_API int luaopen_pb(lua_State *L) {
 #define ENTRY(name) { #name, Lpb_##name }
         ENTRY(clear),
         ENTRY(load),
-        ENTRY(loadfile),
+		//ENTRY(loadfile),
+		ENTRY(loadufsfile),
         ENTRY(encode),
         ENTRY(decode),
         ENTRY(types),

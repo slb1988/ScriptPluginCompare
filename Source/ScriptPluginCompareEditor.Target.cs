@@ -8,7 +8,7 @@ public class ScriptPluginCompareEditorTarget : TargetRules
 	public ScriptPluginCompareEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.Add("ScriptPluginCompare");
+		DefaultBuildSettings = BuildSettingsVersion.Latest;
+        ExtraModuleNames.Add("ScriptPluginCompare");
 	}
 }

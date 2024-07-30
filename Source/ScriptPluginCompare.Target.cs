@@ -8,7 +8,7 @@ public class ScriptPluginCompareTarget : TargetRules
 	public ScriptPluginCompareTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.Add("ScriptPluginCompare");
+		DefaultBuildSettings = BuildSettingsVersion.Latest;
+        ExtraModuleNames.Add("ScriptPluginCompare");
 	}
 }

@@ -15,8 +15,13 @@ public class Protobuf : ModuleRules
     }
 
     public Protobuf(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+    {
+#if UE_5_2_OR_LATER
+        IWYUSupport = IWYUSupport.None;
+#else
+        bEnforceIWYU = false;
+#endif
+        PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
@@ -80,15 +85,30 @@ public class Protobuf : ModuleRules
             bUseRTTI = false;
             PublicDefinitions.Add("GOOGLE_PROTOBUF_NO_RTTI=1");
         }
+        // 添加禁用警告C4800的编译选项
+        bEnableExceptions = true;
+
         if (Target.Platform != UnrealTargetPlatform.Win64)
         {
             PublicDefinitions.Add("HAVE_PTHREAD");
         }
+        else
+        {
+            //Target.DisableSpe
+        }
 
-        PublicDefinitions.Add("_CRT_SECURE_NO_WARNINGS");
+        ShadowVariableWarningLevel = WarningLevel.Off;
+
+        PublicDefinitions.Add("_CRT_SECURE_NO_WARNINGS=1");
+        PublicDefinitions.Add("_SCL_SECURE_NO_WARNINGS=1");
         PublicDefinitions.Add("HAVE_ZLIB=0");
 
+        this.CppStandard = CppStandardVersion.Cpp17;
+
+        // 禁用特定的编译警告
+        //DisableSpecificWarnings.Add("4800");
         // bEnableShadowVariableWarnings = false;
+        bWarningsAsErrors = false;
         bEnableUndefinedIdentifierWarnings = false;
         bEnableExceptions = true;
     }

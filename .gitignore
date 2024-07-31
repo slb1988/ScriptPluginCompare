@@ -78,3 +78,9 @@ DerivedDataCache/*
 **/Intermediate/*
 **/Saved/*
 **/obj/*
+/Script/CodeAnalysis
+/Script/Game/Proxy
+/Script/UE/Proxy
+/Script/UE
+ts_file_versions_info.json
+/Typing

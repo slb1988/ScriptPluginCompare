@@ -98,16 +98,12 @@ public class Protobuf : ModuleRules
         }
 
         ShadowVariableWarningLevel = WarningLevel.Off;
+        ImplicitConversionWarningLevel = WarningLevel.Off;
 
         PublicDefinitions.Add("_CRT_SECURE_NO_WARNINGS=1");
         PublicDefinitions.Add("_SCL_SECURE_NO_WARNINGS=1");
         PublicDefinitions.Add("HAVE_ZLIB=0");
 
-        this.CppStandard = CppStandardVersion.Cpp17;
-
-        // 禁用特定的编译警告
-        //DisableSpecificWarnings.Add("4800");
-        // bEnableShadowVariableWarnings = false;
         bWarningsAsErrors = false;
         bEnableUndefinedIdentifierWarnings = false;
         bEnableExceptions = true;

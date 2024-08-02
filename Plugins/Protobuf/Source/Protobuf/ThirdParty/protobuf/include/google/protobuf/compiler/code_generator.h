@@ -66,7 +66,7 @@ class GeneratorContext;
 // The abstract interface to a class which generates code implementing a
 // particular proto file in a particular language.  A number of these may
 // be registered with CommandLineInterface to support various languages.
-class PROTOC_EXPORT CodeGenerator {
+class CodeGenerator {
  public:
   inline CodeGenerator() {}
   virtual ~CodeGenerator();
@@ -128,7 +128,7 @@ class PROTOC_EXPORT CodeGenerator {
 // abstract interface represents the directory to which the CodeGenerator is
 // to write and other information about the context in which the Generator
 // runs.
-class PROTOC_EXPORT GeneratorContext {
+class GeneratorContext {
  public:
   inline GeneratorContext() {
   }
@@ -191,11 +191,11 @@ typedef GeneratorContext OutputDirectory;
 //   "foo=bar,baz,qux=corge"
 // parses to the pairs:
 //   ("foo", "bar"), ("baz", ""), ("qux", "corge")
-PROTOC_EXPORT void ParseGeneratorParameter(
+void ParseGeneratorParameter(
     const std::string&, std::vector<std::pair<std::string, std::string> >*);
 
 // Strips ".proto" or ".protodevel" from the end of a filename.
-PROTOC_EXPORT std::string StripProto(const std::string& filename);
+std::string StripProto(const std::string& filename);
 
 }  // namespace compiler
 }  // namespace protobuf

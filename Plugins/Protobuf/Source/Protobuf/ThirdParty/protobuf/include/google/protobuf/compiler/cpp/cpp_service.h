@@ -110,7 +110,7 @@ class ServiceGenerator {
 
   int index_in_metadata_;
 
-  friend class FileGenerator;
+  // friend class FileGenerator;
   GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(ServiceGenerator);
 };
 

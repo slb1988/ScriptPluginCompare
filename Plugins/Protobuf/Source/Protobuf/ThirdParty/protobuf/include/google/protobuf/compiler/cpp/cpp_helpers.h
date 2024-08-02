@@ -576,7 +576,7 @@ struct MessageAnalysis {
 // quadratic performance, if we do this per message we would get O(V*(V+E)).
 // Logically this is just only used in message.cc, but in the header for
 // FileGenerator to help share it.
-class PROTOC_EXPORT MessageSCCAnalyzer {
+class MessageSCCAnalyzer {
  public:
   explicit MessageSCCAnalyzer(const Options& options) : options_(options) {}
 
@@ -953,7 +953,7 @@ struct OneOfRangeImpl {
 
 inline OneOfRangeImpl OneOfRange(const Descriptor* desc) { return {desc}; }
 
-PROTOC_EXPORT std::string StripProto(const std::string& filename);
+std::string StripProto(const std::string& filename);
 
 bool EnableMessageOwnedArena(const Descriptor* desc);
 

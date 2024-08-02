@@ -56,7 +56,7 @@ class Message;
 namespace compiler {
 
 // Utility class for launching sub-processes.
-class PROTOC_EXPORT Subprocess {
+class Subprocess {
  public:
   Subprocess();
   ~Subprocess();

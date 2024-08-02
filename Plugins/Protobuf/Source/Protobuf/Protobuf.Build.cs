@@ -103,6 +103,8 @@ public class Protobuf : ModuleRules
         PublicDefinitions.Add("_CRT_SECURE_NO_WARNINGS=1");
         PublicDefinitions.Add("_SCL_SECURE_NO_WARNINGS=1");
         PublicDefinitions.Add("HAVE_ZLIB=0");
+        
+        PrivateDefinitions.Add("PROTOBUF_USE_DLLS");
 
         bWarningsAsErrors = false;
         bEnableUndefinedIdentifierWarnings = false;

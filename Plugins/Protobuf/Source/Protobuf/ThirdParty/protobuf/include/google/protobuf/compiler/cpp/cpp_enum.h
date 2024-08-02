@@ -93,7 +93,7 @@ class EnumGenerator {
 
   std::map<std::string, std::string> variables_;
 
-  friend class FileGenerator;
+  // friend class FileGenerator;
   GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(EnumGenerator);
 };
 

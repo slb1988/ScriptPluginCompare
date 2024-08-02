@@ -48,7 +48,7 @@
 //#include <google/protobuf/io/io_win32.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
 #include <google/protobuf/stubs/stl_util.h>
-#include <io.h>
+// #include <io.h>
 
 
 namespace google {
@@ -61,11 +61,12 @@ namespace {
 
 // EINTR sucks.
 int close_no_eintr(int fd) {
-  int result;
-  do {
-    result = close(fd);
-  } while (result < 0 && errno == EINTR);
-  return result;
+  // int result;
+  // do {
+  //   // result = close(fd);
+  // } while (result < 0 && errno == EINTR);
+  // return result;
+  return 0;
 }
 
 }  // namespace
@@ -127,10 +128,10 @@ bool FileInputStream::CopyingFileInputStream::Close() {
 int FileInputStream::CopyingFileInputStream::Read(void* buffer, int size) {
   GOOGLE_CHECK(!is_closed_);
 
-  int result;
-  do {
-    result = read(file_, buffer, size);
-  } while (result < 0 && errno == EINTR);
+  int result = 0;
+  // do {
+  //   result = read(file_, buffer, size);
+  // } while (result < 0 && errno == EINTR);
 
   if (result < 0) {
     // Read error (not EOF).
@@ -143,19 +144,20 @@ int FileInputStream::CopyingFileInputStream::Read(void* buffer, int size) {
 int FileInputStream::CopyingFileInputStream::Skip(int count) {
   GOOGLE_CHECK(!is_closed_);
 
-  if (!previous_seek_failed_ && lseek(file_, count, SEEK_CUR) != (off_t)-1) {
-    // Seek succeeded.
-    return count;
-  } else {
-    // Failed to seek.
-
-    // Note to self:  Don't seek again.  This file descriptor doesn't
-    // support it.
-    previous_seek_failed_ = true;
-
-    // Use the default implementation.
-    return CopyingInputStream::Skip(count);
-  }
+  // if (!previous_seek_failed_ && lseek(file_, count, SEEK_CUR) != (off_t)-1) {
+  //   // Seek succeeded.
+  //   return count;
+  // } else {
+  //   // Failed to seek.
+  //
+  //   // Note to self:  Don't seek again.  This file descriptor doesn't
+  //   // support it.
+  //   previous_seek_failed_ = true;
+  //
+  //   // Use the default implementation.
+  //   return CopyingInputStream::Skip(count);
+  // }
+  return 0;
 }
 
 // ===================================================================
@@ -209,10 +211,10 @@ bool FileOutputStream::CopyingFileOutputStream::Write(const void* buffer,
   const uint8_t* buffer_base = reinterpret_cast<const uint8_t*>(buffer);
 
   while (total_written < size) {
-    int bytes;
-    do {
-      bytes = write(file_, buffer_base + total_written, size - total_written);
-    } while (bytes < 0 && errno == EINTR);
+    int bytes = 0;
+    // do {
+    //   // bytes = write(file_, buffer_base + total_written, size - total_written);
+    // } while (bytes < 0 && errno == EINTR);
 
     if (bytes <= 0) {
       // Write error.

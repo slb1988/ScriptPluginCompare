@@ -7,6 +7,18 @@ class PuerTSActor extends UE.Actor {
 
         this.Loop = PuerTSSubsystem.Loop;
 
+        console.log(this.Loop.toString())
+
+        try {
+            console.log(UE.TestCaseBlueprintFunctionLibrary.GetPlatform())
+            console.log(UE.TestCaseBlueprintFunctionLibrary.GetBuildConfiguration())
+            
+            var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
+            console.log(Start);
+        } catch (e) {
+            console.log(e);
+        }
+
         this.StartTest();
 
         this.ProcessTest();
@@ -558,13 +570,13 @@ class PuerTSActor extends UE.Actor {
 
     // Empty
     private EmptyFunction(InLoop: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             this.Empty();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -573,13 +585,13 @@ class PuerTSActor extends UE.Actor {
 
     // Bool
     private SetCppBoolValue(InLoop: number, InObject: UE.TestActor, InValue: boolean): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.BoolValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -587,13 +599,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppBoolValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.BoolValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -602,13 +614,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int8
     private SetCppInt8Value(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.Int8Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -616,13 +628,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInt8Value(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.Int8Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -631,13 +643,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int16
     private SetCppInt16Value(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.Int16Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -645,13 +657,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInt16Value(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.Int16Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -660,13 +672,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int32
     private SetCppInt32Value(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.Int32Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -674,13 +686,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInt32Value(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.Int32Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -689,13 +701,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int64
     private SetCppInt64Value(InLoop: number, InObject: UE.TestActor, InValue: bigint): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.Int64Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -703,13 +715,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInt64Value(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.Int64Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -718,13 +730,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt8
     private SetCppUInt8Value(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.UInt8Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -732,13 +744,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppUInt8Value(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.UInt8Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -747,13 +759,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt16
     private SetCppUInt16Value(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.UInt16Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -761,13 +773,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppUInt16Value(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.UInt16Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -776,13 +788,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt32
     private SetCppUInt32Value(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.UInt32Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -790,13 +802,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppUInt32Value(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.UInt32Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -805,13 +817,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt64
     private SetCppUInt64Value(InLoop: number, InObject: UE.TestActor, InValue: bigint): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.UInt64Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -819,13 +831,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppUInt64Value(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.UInt64Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -834,13 +846,13 @@ class PuerTSActor extends UE.Actor {
 
     // Float
     private SetCppFloatValue(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.FloatValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -848,13 +860,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppFloatValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.FloatValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -863,13 +875,13 @@ class PuerTSActor extends UE.Actor {
 
     // Double
     private SetCppDoubleValue(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.DoubleValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -877,13 +889,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppDoubleValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.DoubleValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -892,13 +904,13 @@ class PuerTSActor extends UE.Actor {
 
     // FName
     private SetCppNameValue(InLoop: number, InObject: UE.TestActor, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.NameValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -906,13 +918,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppNameValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.NameValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -921,13 +933,13 @@ class PuerTSActor extends UE.Actor {
 
     // FText
     private SetCppTextValue(InLoop: number, InObject: UE.TestActor, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.TextValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -935,13 +947,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppTextValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.TextValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -950,13 +962,13 @@ class PuerTSActor extends UE.Actor {
 
     // FString
     private SetCppStringValue(InLoop: number, InObject: UE.TestActor, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.StringValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -964,13 +976,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppStringValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.StringValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -979,13 +991,13 @@ class PuerTSActor extends UE.Actor {
 
     // UEnum
     private SetCppEnumValue(InLoop: number, InObject: UE.TestActor, InValue: UE.ETestEnum): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.EnumValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -993,13 +1005,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppEnumValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.EnumValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1008,13 +1020,13 @@ class PuerTSActor extends UE.Actor {
 
     // UEnum Class
     private SetCppEnumClassValue(InLoop: number, InObject: UE.TestActor, InValue: UE.ETestEnumClass): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.EnumClassValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1022,13 +1034,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppEnumClassValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.EnumClassValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1037,13 +1049,13 @@ class PuerTSActor extends UE.Actor {
 
     // UStruct
     private SetCppStructValue(InLoop: number, InObject: UE.TestActor, InValue: UE.TestStruct): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.StructValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1051,13 +1063,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppStructValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.StructValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1066,13 +1078,13 @@ class PuerTSActor extends UE.Actor {
 
     // UObject
     private SetCppObjectValue(InLoop: number, InObject: UE.TestActor, InValue: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.ObjectValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1080,13 +1092,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppObjectValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.ObjectValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1095,13 +1107,13 @@ class PuerTSActor extends UE.Actor {
 
     // UClass
     private SetCppClassValue(InLoop: number, InObject: UE.TestActor, InValue: UE.Class): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.ClassValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1109,13 +1121,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppClassValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.ClassValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1124,13 +1136,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInterface
     private SetCppInterfaceValue(InLoop: number, InObject: UE.TestActor, InValue: UE.TestInterface): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.InterfaceValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1138,13 +1150,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInterfaceValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.InterfaceValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1153,13 +1165,13 @@ class PuerTSActor extends UE.Actor {
 
     // TArray
     private SetCppArrayValue(InLoop: number, InObject: UE.TestActor, InValue: UE.TArray<number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.ArrayValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1167,13 +1179,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppArrayValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.ArrayValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1182,13 +1194,13 @@ class PuerTSActor extends UE.Actor {
 
     // TArray Element
     private SetCppArrayElement(InLoop: number, InObject: UE.TestActor, InIndex: number, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.ArrayValue[InIndex] = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1196,13 +1208,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppArrayElement(InLoop: number, InObject: UE.TestActor, InIndex: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.ArrayValue[InIndex];
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1211,13 +1223,13 @@ class PuerTSActor extends UE.Actor {
 
     // TSet
     private SetCppSetValue(InLoop: number, InObject: UE.TestActor, InValue: UE.TSet<number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1225,13 +1237,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppSetValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.SetValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1240,13 +1252,13 @@ class PuerTSActor extends UE.Actor {
 
     // TMap
     private SetCppMapValue(InLoop: number, InObject: UE.TestActor, InValue: UE.TMap<number, number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.MapValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1254,13 +1266,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppMapValue(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.MapValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1269,13 +1281,13 @@ class PuerTSActor extends UE.Actor {
 
     // TMap Element
     private SetCppMapElement(InLoop: number, InObject: UE.TestActor, InIndex: number, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.MapValue[InIndex] = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1283,13 +1295,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppMapElement(InLoop: number, InObject: UE.TestActor, InIndex: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.MapValue[InIndex];
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1302,13 +1314,13 @@ class PuerTSActor extends UE.Actor {
 
     // Add
     private AddFunction(InLoop: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             this.Add(1, 1);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1321,13 +1333,13 @@ class PuerTSActor extends UE.Actor {
 
     // Subtract
     private SubtractFunction(InLoop: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             this.Subtract(1, 1);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1340,13 +1352,13 @@ class PuerTSActor extends UE.Actor {
 
     // Multiply
     private MultiplyFunction(InLoop: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             this.Multiply(1, 1);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1359,13 +1371,13 @@ class PuerTSActor extends UE.Actor {
 
     // Divide
     private DivideFunction(InLoop: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             this.Divide(1, 1);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1374,13 +1386,13 @@ class PuerTSActor extends UE.Actor {
 
     // Static
     private StaticCppFunction(InLoop: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             UE.TestActor.StaticFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1389,13 +1401,13 @@ class PuerTSActor extends UE.Actor {
 
     // Member
     private MemberCppFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.MemberFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1404,13 +1416,13 @@ class PuerTSActor extends UE.Actor {
 
     // Bool
     private SetCppBoolValueFunction(InLoop: number, InObject: UE.TestActor, InValue: boolean): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetBoolValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1418,13 +1430,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppBoolValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetBoolValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1433,13 +1445,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int8
     private SetCppInt8ValueFunction(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetInt8ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1447,13 +1459,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInt8ValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetInt8ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1462,13 +1474,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int16
     private SetCppInt16ValueFunction(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetInt16ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1476,13 +1488,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInt16ValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetInt16ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1491,13 +1503,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int32
     private SetCppInt32ValueFunction(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetInt32ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1505,13 +1517,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInt32ValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetInt32ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1520,13 +1532,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int64
     private SetCppInt64ValueFunction(InLoop: number, InObject: UE.TestActor, InValue: bigint): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetInt64ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1534,13 +1546,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInt64ValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetInt64ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1549,13 +1561,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt8
     private SetCppUInt8ValueFunction(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetUInt8ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1563,13 +1575,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppUInt8ValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetUInt8ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1578,13 +1590,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt16
     private SetCppUInt16ValueFunction(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetUInt16ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1592,13 +1604,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppUInt16ValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetUInt16ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1607,13 +1619,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt32
     private SetCppUInt32ValueFunction(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetUInt32ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1621,13 +1633,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppUInt32ValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetUInt32ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1636,13 +1648,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt64
     private SetCppUInt64ValueFunction(InLoop: number, InObject: UE.TestActor, InValue: bigint): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetUInt64ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1650,13 +1662,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppUInt64ValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetUInt64ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1665,13 +1677,13 @@ class PuerTSActor extends UE.Actor {
 
     // Float
     private SetCppFloatValueFunction(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetFloatValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1679,13 +1691,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppFloatValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetFloatValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1694,13 +1706,13 @@ class PuerTSActor extends UE.Actor {
 
     // Double
     private SetCppDoubleValueFunction(InLoop: number, InObject: UE.TestActor, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetDoubleValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1708,13 +1720,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppDoubleValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetDoubleValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1723,13 +1735,13 @@ class PuerTSActor extends UE.Actor {
 
     // FName
     private SetCppNameValueFunction(InLoop: number, InObject: UE.TestActor, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetNameValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1737,13 +1749,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppNameValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetNameValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1752,13 +1764,13 @@ class PuerTSActor extends UE.Actor {
 
     // FText
     private SetCppTextValueFunction(InLoop: number, InObject: UE.TestActor, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetTextValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1766,13 +1778,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppTextValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetTextValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1781,13 +1793,13 @@ class PuerTSActor extends UE.Actor {
 
     // FString
     private SetCppStringValueFunction(InLoop: number, InObject: UE.TestActor, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetStringValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1795,13 +1807,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppStringValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetStringValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1810,13 +1822,13 @@ class PuerTSActor extends UE.Actor {
 
     // UEnum
     private SetCppEnumValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.ETestEnum): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetEnumValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1824,13 +1836,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppEnumValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetEnumValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1839,13 +1851,13 @@ class PuerTSActor extends UE.Actor {
 
     // UEnum Class
     private SetCppEnumClassValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.ETestEnumClass): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetEnumClassValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1853,13 +1865,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppEnumClassValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetEnumClassValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1868,13 +1880,13 @@ class PuerTSActor extends UE.Actor {
 
     // UStruct
     private SetCppStructValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.TestStruct): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetStructValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1882,13 +1894,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppStructValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetStructValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1897,13 +1909,13 @@ class PuerTSActor extends UE.Actor {
 
     // UObject
     private SetCppObjectValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetObjectValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1911,13 +1923,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppObjectValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetObjectValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1926,13 +1938,13 @@ class PuerTSActor extends UE.Actor {
 
     // UClass
     private SetCppClassValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.Class): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetClassValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1940,13 +1952,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppClassValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetClassValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1955,13 +1967,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInterface
     private SetCppInterfaceValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.TestInterface): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetInterfaceValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1969,13 +1981,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppInterfaceValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetInterfaceValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1984,13 +1996,13 @@ class PuerTSActor extends UE.Actor {
 
     // TArray
     private SetCppArrayValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.TArray<number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetArrayValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -1998,13 +2010,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppArrayValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetArrayValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2013,13 +2025,13 @@ class PuerTSActor extends UE.Actor {
 
     // TSet
     private SetCppSetValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.TSet<number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetSetValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2027,13 +2039,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppSetValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetSetValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2042,13 +2054,13 @@ class PuerTSActor extends UE.Actor {
 
     // TMap
     private SetCppMapValueFunction(InLoop: number, InObject: UE.TestActor, InValue: UE.TMap<number, number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetMapValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2056,13 +2068,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetCppMapValueFunction(InLoop: number, InObject: UE.TestActor): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetMapValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2071,13 +2083,13 @@ class PuerTSActor extends UE.Actor {
 
     // Bool
     private SetBPBoolValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: boolean): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.BoolValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2085,13 +2097,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPBoolValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.BoolValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2100,13 +2112,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int32
     private SetBPInt32Value(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.Int32Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2114,13 +2126,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPInt32Value(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.Int32Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2129,13 +2141,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int64
     private SetBPInt64Value(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: bigint): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.Int64Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2143,13 +2155,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPInt64Value(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.Int64Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2158,13 +2170,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt8
     private SetBPUInt8Value(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.UInt8Value = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2172,13 +2184,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPUInt8Value(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.UInt8Value;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2187,13 +2199,13 @@ class PuerTSActor extends UE.Actor {
 
     // Double
     private SetBPDoubleValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.DoubleValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2201,13 +2213,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPDoubleValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.DoubleValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2216,13 +2228,13 @@ class PuerTSActor extends UE.Actor {
 
     // FName
     private SetBPNameValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.NameValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2230,13 +2242,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPNameValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.NameValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2245,13 +2257,13 @@ class PuerTSActor extends UE.Actor {
 
     // FText
     private SetBPTextValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.TextValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2259,13 +2271,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPTextValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.TextValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2274,13 +2286,13 @@ class PuerTSActor extends UE.Actor {
 
     // FString
     private SetBPStringValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.StringValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2288,13 +2300,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPStringValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.StringValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2303,13 +2315,13 @@ class PuerTSActor extends UE.Actor {
 
     // UEnum
     private SetBPEnumValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Game.FirstPerson.Blueprints.BP_TestEnum.BP_TestEnum): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.EnumValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2317,13 +2329,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPEnumValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.EnumValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2332,13 +2344,13 @@ class PuerTSActor extends UE.Actor {
 
     // UStruct
     private SetBPStructValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Game.FirstPerson.Blueprints.BP_TestStruct.BP_TestStruct): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.StructValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2346,13 +2358,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPStructValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.StructValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2361,13 +2373,13 @@ class PuerTSActor extends UE.Actor {
 
     // UObject
     private SetBPObjectValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.ObjectValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2375,13 +2387,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPObjectValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.ObjectValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2390,13 +2402,13 @@ class PuerTSActor extends UE.Actor {
 
     // UClass
     private SetBPClassValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Class): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.ClassValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2404,13 +2416,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPClassValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.ClassValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2419,13 +2431,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInterface
     private SetBPInterfaceValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Game.FirstPerson.Blueprints.BP_TestInterface.BP_TestInterface_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.InterfaceValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2433,13 +2445,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPInterfaceValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.InterfaceValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2448,13 +2460,13 @@ class PuerTSActor extends UE.Actor {
 
     // TArray
     private SetBPArrayValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.TArray<number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.ArrayValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2462,13 +2474,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPArrayValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.ArrayValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2477,13 +2489,13 @@ class PuerTSActor extends UE.Actor {
 
     // TArray Element
     private SetBPArrayElement(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InIndex: number, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.ArrayValue[InIndex] = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2491,13 +2503,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPArrayElement(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InIndex: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.ArrayValue[InIndex];
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2506,13 +2518,13 @@ class PuerTSActor extends UE.Actor {
 
     // TSet
     private SetBPSetValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.TSet<number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2520,13 +2532,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPSetValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.SetValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2535,13 +2547,13 @@ class PuerTSActor extends UE.Actor {
 
     // TMap
     private SetBPMapValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.TMap<number, number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.MapValue = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2549,13 +2561,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPMapValue(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.MapValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2564,13 +2576,13 @@ class PuerTSActor extends UE.Actor {
 
     // TMap Element
     private SetBPMapElement(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InIndex: number, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.MapValue[InIndex] = InValue;
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2578,13 +2590,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPMapElement(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InIndex: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.MapValue[InIndex];
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2592,13 +2604,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private MemberBPFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.MemberFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2607,13 +2619,13 @@ class PuerTSActor extends UE.Actor {
 
     // Bool
     private SetBPBoolValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: boolean): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetBoolValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2621,13 +2633,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPBoolValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetBoolValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2636,13 +2648,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int32
     private SetBPInt32ValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetInt32ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2650,13 +2662,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPInt32ValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetInt32ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2665,13 +2677,13 @@ class PuerTSActor extends UE.Actor {
 
     // Int64
     private SetBPInt64ValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: bigint): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetInt64ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2679,13 +2691,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPInt64ValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetInt64ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2694,13 +2706,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInt8
     private SetBPUInt8ValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetUInt8ValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2708,13 +2720,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPUInt8ValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetUInt8ValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2723,13 +2735,13 @@ class PuerTSActor extends UE.Actor {
 
     // Double
     private SetBPDoubleValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: number): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetDoubleValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2737,13 +2749,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPDoubleValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetDoubleValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2752,13 +2764,13 @@ class PuerTSActor extends UE.Actor {
 
     // FName
     private SetBPNameValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetNameValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2766,13 +2778,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPNameValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetNameValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2781,13 +2793,13 @@ class PuerTSActor extends UE.Actor {
 
     // FText
     private SetBPTextValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetTextValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2795,13 +2807,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPTextValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetTextValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2810,13 +2822,13 @@ class PuerTSActor extends UE.Actor {
 
     // FString
     private SetBPStringValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: string): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetStringValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2824,13 +2836,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPStringValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetStringValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2839,13 +2851,13 @@ class PuerTSActor extends UE.Actor {
 
     // UEnum
     private SetBPEnumValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Game.FirstPerson.Blueprints.BP_TestEnum.BP_TestEnum): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetEnumValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2853,13 +2865,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPEnumValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetEnumValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2868,13 +2880,13 @@ class PuerTSActor extends UE.Actor {
 
     // UStruct
     private SetBPStructValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Game.FirstPerson.Blueprints.BP_TestStruct.BP_TestStruct): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetStructValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2882,13 +2894,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPStructValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetStructValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2897,13 +2909,13 @@ class PuerTSActor extends UE.Actor {
 
     // UObject
     private SetBPObjectValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetObjectValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2911,13 +2923,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPObjectValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetObjectValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2926,13 +2938,13 @@ class PuerTSActor extends UE.Actor {
 
     // UClass
     private SetBPClassValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Class): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetClassValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2940,13 +2952,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPClassValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetClassValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2955,13 +2967,13 @@ class PuerTSActor extends UE.Actor {
 
     // UInterface
     private SetBPInterfaceValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.Game.FirstPerson.Blueprints.BP_TestInterface.BP_TestInterface_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetInterfaceValueFunction(InValue);
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2969,13 +2981,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPInterfaceValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetInterfaceValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2984,13 +2996,13 @@ class PuerTSActor extends UE.Actor {
 
     // TArray
     private SetBPArrayValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.TArray<number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetArrayValueFunction($ref(InValue));
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -2998,13 +3010,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPArrayValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetArrayValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -3013,13 +3025,13 @@ class PuerTSActor extends UE.Actor {
 
     // TSet
     private SetBPSetValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.TSet<number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetSetValueFunction($ref(InValue));
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -3027,13 +3039,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPSetValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetSetValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -3042,13 +3054,13 @@ class PuerTSActor extends UE.Actor {
 
     // TMap
     private SetBPMapValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C, InValue: UE.TMap<number, number>): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             InObject.SetMapValueFunction($ref(InValue));
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 
@@ -3056,13 +3068,13 @@ class PuerTSActor extends UE.Actor {
     }
 
     private GetBPMapValueFunction(InLoop: number, InObject: UE.Game.FirstPerson.Blueprints.BP_TestActor.BP_TestActor_C): void {
-        var Start = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var Start = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         for (var i = 0; i < InLoop; i++) {
             var Value = InObject.GetMapValueFunction();
         }
 
-        var End = UE.TestCaseBlueprintFunctionLibrary.GetTimestamp();
+        var End = UE.TestCaseBlueprintFunctionLibrary.BP_GetTimestamp();
 
         var TotalSeconds = UE.TestCaseBlueprintFunctionLibrary.GetTotalSeconds(End, Start);
 

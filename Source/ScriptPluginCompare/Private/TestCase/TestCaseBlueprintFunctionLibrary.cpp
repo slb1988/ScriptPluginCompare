@@ -10,6 +10,12 @@ int64 UTestCaseBlueprintFunctionLibrary::GetTimestamp()
 		std::chrono::system_clock::now().time_since_epoch()).count();
 }
 
+int64 UTestCaseBlueprintFunctionLibrary::BP_GetTimestamp()
+{
+	return std::chrono::duration_cast<std::chrono::milliseconds>(
+		std::chrono::system_clock::now().time_since_epoch()).count();
+}
+
 double UTestCaseBlueprintFunctionLibrary::GetTotalSeconds(const int64& A, const int64& B)
 {
 	return std::chrono::duration<double>(std::chrono::milliseconds(A) - std::chrono::milliseconds(B)).count();;

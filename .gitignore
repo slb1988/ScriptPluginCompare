@@ -84,3 +84,5 @@ DerivedDataCache/*
 /Script/UE
 ts_file_versions_info.json
 /Typing
+/Packaged
+/Plugins/UnLuaExtensions/LuaProtobuf/Binaries

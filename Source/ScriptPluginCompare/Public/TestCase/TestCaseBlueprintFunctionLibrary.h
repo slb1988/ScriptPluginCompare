@@ -17,6 +17,9 @@ class SCRIPTPLUGINCOMPARE_API UTestCaseBlueprintFunctionLibrary : public UBluepr
 public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static int64 GetTimestamp();
+	
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static int64 BP_GetTimestamp();
 
 	UFUNCTION(BlueprintCallable)
 	static double GetTotalSeconds(const int64& A, const int64& B);
